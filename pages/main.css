@@ -4,6 +4,7 @@ h1, h2, h3, h4, h5, h6, img, p, div, nav {
 }
 
 
+/*-------------------NAV------------*/
 .primary-nav {
     display:flex;
     list-style-type:none;
@@ -12,6 +13,8 @@ h1, h2, h3, h4, h5, h6, img, p, div, nav {
     border-bottom: 1px solid black;
 }
 
+/*---------------Teacher Page----------*/
+
 .left {
     margin-right:auto;
 }
@@ -19,8 +22,6 @@ h1, h2, h3, h4, h5, h6, img, p, div, nav {
 .left, .right {
   padding: 1%;
 }
-
-
 
 img {
   border-radius: 50%;
@@ -63,5 +64,52 @@ img {
   justify-content: center;
   width: 1000px;
   margin: 0 auto;
+
+}
+
+/*---------------Course Page------------*/
+
+.course-left, .course-right {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+
+.course-left {
+  width: 150px;
+  height: 100px
+}
+
+.course-right {
+  width: 300px;
+  height: 100px;
+}
+
+.course-left h4, .course-left h5 {
+  padding: 5px 10px;
+}
+
+.course-right p {
+  border-left: 1px solid black;
+  padding: 5px 10px;
+}
+
+.course-whole {
+  display:flex;
+  background-color: #eee;
+  width: 450px;
+  border: 1px solid black;
+  justify-content:flex-start;
+  margin: 1%;
+}
+
+.course-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 1000px;
+  margin: 0 auto;
+
 
 }
