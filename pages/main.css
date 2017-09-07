@@ -55,6 +55,7 @@ img {
   flex-wrap: wrap;
   margin: 1%;
   border: 1px solid black;
+  background-color: #eee;
 }
 
 .content {
@@ -91,7 +92,7 @@ img {
 }
 
 .course-right p {
-  border-left: 1px solid black;
+  border-left: 2px solid black;
   padding: 5px 10px;
 }
 
@@ -99,7 +100,7 @@ img {
   display:flex;
   background-color: #eee;
   width: 450px;
-  border: 1px solid black;
+  border: 2px solid black;
   justify-content:flex-start;
   margin: 1%;
 }
@@ -120,7 +121,7 @@ img {
   display: flex;
   flex-direction: column;
   width: 400px;
-  border: 1px solid black;
+  border: 2px solid black;
 }
 
 .student-top, .student-bottom {
@@ -145,7 +146,7 @@ img {
 }
 
 .student-top {
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid black;
 }
 
 
