@@ -113,3 +113,81 @@ img {
 
 
 }
+
+/*-------------Student Profiles-----------*/
+
+.student-whole {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  border: 1px solid black;
+}
+
+.student-top, .student-bottom {
+  width: 400px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+}
+
+.student-top {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.student-bottom {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.student-top {
+  border-bottom: 1px solid black;
+}
+
+
+.std-bottom-left, .std-bottom-right {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0 0 0;
+}
+
+.std-bottom-left {
+  align-items: flex-end;
+}
+
+.std-bottom-left p, .std-bottom-right p, .student-top h5, .student-top h4 {
+  padding: 10px;
+}
+.std-bottom-left p:first-child {
+  padding: 20px 10px 10px 10px;
+}
+
+.std-bottom-right p:first-child {
+  padding: 20px 10px 10px 10px;
+}
+
+.std-bottom-right p.nospace {
+  padding: 0 10px;
+}
+
+.std-bottom-left {
+  font-weight: 700;
+}
+
+.student-top h4 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.student-top h5 {
+  font-size: 20px;
+}
+
+.student-content {
+  display: flex;
+  justify-content: space-around;
+}
