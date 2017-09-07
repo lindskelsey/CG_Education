@@ -13,6 +13,15 @@ h1, h2, h3, h4, h5, h6, img, p, div, nav {
     border-bottom: 1px solid black;
 }
 
+.right {
+  margin: 3px 0;
+}
+
+.primary-nav .right:nth-child(3) {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+
 /*---------------Teacher Page----------*/
 
 .left {
