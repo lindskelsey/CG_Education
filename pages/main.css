@@ -10,11 +10,16 @@ h1, h2, h3, h4, h5, h6, img, p, div, nav {
     list-style-type:none;
     padding:0;
     justify-content:flex-end;
-    border-bottom: 1px solid black;
+    border-bottom: 3px solid black;
 }
 
 .right {
   margin: 3px 0;
+  font-size: 20px;
+}
+
+.left {
+  font-size: 24px;
 }
 
 .primary-nav .right:nth-child(3) {
@@ -53,10 +58,11 @@ img {
   flex-direction:column;
   width: 148px;
   height: 75px;
-  justify-content: center;
   align-items: center;
   border: 1px solid black;
+  padding: 10px 0 0 0;
 }
+
 
 .full-box {
   display: flex;
