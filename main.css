@@ -11,6 +11,10 @@ h1, h2, h3, h4, h5, h6, img, p, div, nav {
     padding:0;
     justify-content:flex-end;
     border-bottom: 3px solid black;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    color: #cc0033;
 }
 
 .right {
@@ -28,6 +32,13 @@ h1, h2, h3, h4, h5, h6, img, p, div, nav {
 }
 
 /*---------------Teacher Page----------*/
+
+body {
+  font-family: 'Montserrat';
+  font-style: normal;
+  background-color: #fff;
+  font-weight: 400;
+}
 
 .left {
     margin-right:auto;
@@ -47,10 +58,10 @@ img {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  border: 1px solid black;
   width: 300px;
   height: 75px;
   justify-content: center;
+  border-bottom: 2px solid #cc0033;
 }
 
 .left-box, .right-box {
@@ -59,8 +70,11 @@ img {
   width: 148px;
   height: 75px;
   align-items: center;
-  border: 1px solid black;
   padding: 10px 0 0 0;
+}
+
+.left-box {
+  border-right: 2px solid #cc0033;
 }
 
 
@@ -69,8 +83,9 @@ img {
   width: 300px;
   flex-wrap: wrap;
   margin: 1%;
-  border: 1px solid black;
+  border: 2px solid #cc0033;
   background-color: #eee;
+  border-radius: 25px;
 }
 
 .content {
