@@ -9,3 +9,9 @@ function getAvgRating(ratings) {
   }
   return total / ratings.length;
 }
+
+function addTeacherRating(ratings,newRating) {
+  var totalRating = ratings;
+  totalRating.push(newRating);
+  return totalRating;
+}
