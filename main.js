@@ -1,11 +1,11 @@
-var teacherName = "Sally Jones"
-var department = "Physics"
-var ratingOne = 1
-var ratingTwo = 2
-var ratingThree = 3
-var avgRating = (ratingOne + ratingTwo + ratingThree)/3
+var teacherName = "Sally Jones";
+var department = "Physics";
+var teacherRating = [1,2,3];
 
-console.log("Teacher: " + teacherName)
-console.log("Department: " + department)
-console.log("Ratings: " + ratingOne + "," + ratingTwo + "," + ratingThree)
-console.log(avgRating)
+function getAvgRating(ratings) {
+  var total = 0;
+  for (i = 0; i < ratings.length; i++) {
+      total += ratings[i];
+  }
+  return total / ratings.length;
+}
