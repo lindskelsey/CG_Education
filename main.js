@@ -31,10 +31,18 @@ if (userRating >=0 && userRating <=5) {
 }
 
 
-
 if (userRating >=0 && userRating <=5) {
   teacherRating.push(parseInt(userRating))
     alert("Thanks for you review! " + teacherName + "'s average rating is now " + getAvgRating(teacherRating) + " .")
 } else {
   userRating = prompt("We would like for you to review . Please enter a rating between 0.0 - 5.0?")
 }
+
+
+var courses = [
+                [course1,department1]
+                [course2, department2]
+                [course3, department3]
+              ]
+
+function filterByDepartment(courseArray,department)
