@@ -19,13 +19,22 @@ function addTeacherRating(ratings,newRating) {
 var userRating = prompt("We would like for you to review . Please enter a rating between 0.0 - 5.0?");
 
 if (userRating >=0 && userRating <=5) {
-  teacherRating.push(userRating)
+  teacherRating.push(parseInt(userRating))
   var totalNewRating = 0;
     for (i = 0; i < teacherRating.length; i++) {
       totalNewRating += teacherRating[i];
     }
     var finalRating = (totalNewRating/ teacherRating.length);
     alert("Thanks for you review! " + teacherName + "'s average rating is now " + finalRating + " .")
+} else {
+  userRating = prompt("We would like for you to review . Please enter a rating between 0.0 - 5.0?")
+}
+
+
+
+if (userRating >=0 && userRating <=5) {
+  teacherRating.push(parseInt(userRating))
+    alert("Thanks for you review! " + teacherName + "'s average rating is now " + getAvgRating(teacherRating) + " .")
 } else {
   userRating = prompt("We would like for you to review . Please enter a rating between 0.0 - 5.0?")
 }
