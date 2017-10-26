@@ -122,7 +122,7 @@ img {
 }
 
 .course-right p {
-  border-left: 2px solid black;
+  border-left: 2px solid #cc0033;
   padding: 5px 10px;
 }
 
@@ -130,7 +130,8 @@ img {
   display:flex;
   background-color: #eee;
   width: 450px;
-  border: 2px solid black;
+  border: 2px solid #cc0033;
+  border-radius: 25px;
   justify-content:flex-start;
   margin: 1%;
 }
@@ -151,7 +152,9 @@ img {
   display: flex;
   flex-direction: column;
   width: 400px;
-  border: 2px solid black;
+  border: 2px solid #cc0033;
+  border-radius: 25px;
+  background-color: #eee;
 }
 
 .student-top, .student-bottom {
@@ -160,7 +163,6 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #eee;
 }
 
 .student-top {
@@ -176,7 +178,7 @@ img {
 }
 
 .student-top {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #cc0033;
 }
 
 
