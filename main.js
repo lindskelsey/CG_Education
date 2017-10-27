@@ -1,5 +1,3 @@
-
-
 var teacherName = "Jennifer Honey";
 var department = "English";
 var teacherRating = [3.0,4.5,5.0];
@@ -30,12 +28,12 @@ if (userRating >=0 && userRating <=5) {
 
 
 var coursesListFull = [
-                ["course1","English"],
-                ["course2", "English"],
-                ["course3", "Math"],
-                ["course4", "Science"],
-                ["course5", "Science"],
-                ["course6", "Math"]
+                ["Literature","English"],
+                ["Spanish", "Foreign Language"],
+                ["Geometry", "Math"],
+                ["Physics", "Science"],
+                ["Biology", "Science"],
+                ["Calculus", "Math"]
               ];
 
 function filterByDepartment (coursesArray, selectDept) {
@@ -47,3 +45,12 @@ function filterByDepartment (coursesArray, selectDept) {
   }
     return courseList;
 }
+
+var deptListFull = ["Math", "English", "Foreign Language", "Science"]
+
+var userDept = prompt("Please enter the department you are looking for a course in")
+  if (deptListFull.indexOf(userDept) !== -1) {
+    alert("The following courses are available in the " + userDept + " department:" + filterByDepartment(coursesListFull,userDept) + ".");
+  } else {
+    prompt("Please enter the department you are looking for a course in")
+  }
