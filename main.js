@@ -46,11 +46,21 @@ function filterByDepartment (coursesArray, selectDept) {
     return courseList;
 }
 
-var deptListFull = ["Math", "English", "Foreign Language", "Science"]
+var fullDeptList = ["Math", "Science", "English", "Foreign Language"]
 
 var userDept = prompt("Please enter the department you are looking for a course in")
-  if (deptListFull.indexOf(userDept) !== -1) {
+  if (fullDeptList.indexOf(userDept) !== -1) {
     alert("The following courses are available in the " + userDept + " department:" + filterByDepartment(coursesListFull,userDept) + ".");
   } else {
     prompt("Please enter the department you are looking for a course in")
+  }
+
+//**Trying to get Array into one Dept List**//
+
+  var getDeptList = function (coursesArray, indexDept){
+      var deptList = [];
+      for(var i=0; i<coursesArray.length; i++){
+        deptList.push(coursesArray[i][indexDept]);
+      }
+      return deptList;
   }
