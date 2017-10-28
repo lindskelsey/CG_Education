@@ -46,14 +46,15 @@ function filterByDepartment (coursesArray, selectDept) {
     return courseList;
 }
 
-var fullDeptList = ["Math", "Science", "English", "Foreign Language"]
+var fullDeptList = ["Math", "Science", "English", "Foreign Language"];
 
 var userDept = prompt("Please enter the department you are looking for a course in")
+
   if (fullDeptList.indexOf(userDept) !== -1) {
     alert("The following courses are available in the " + userDept + " department:" + filterByDepartment(coursesListFull,userDept) + ".");
   } else {
     prompt("Please enter the department you are looking for a course in")
-  }
+  };
 
 //**Trying to get Array into one Dept List**//
 
@@ -63,4 +64,45 @@ var userDept = prompt("Please enter the department you are looking for a course 
         deptList.push(coursesArray[i][indexDept]);
       }
       return deptList;
-  }
+  };
+
+//**JS 3**//
+
+var welcomeCollegeStudent = function (classYear) {
+  alert("Welcome " + classYear + "!")
+};
+
+var welcomeHSStudent = function (classYearHS) {
+  alert("You're still a " + classYearHS + " in high school!")
+};
+
+var getGradDate = function (gradMonth, gradYear) {
+  var gradDate = gradMonth + " " + gradYear;
+  return gradDate
+
+};
+
+//************//
+
+var today = new Date();
+var currentYear = today.getFullYear();
+
+function welcomeStudentsByGraduatingClass() {
+    var enteredGradYear = prompt("Enter your graduation year");
+    var enteredGradMonth = prompt("Enter your graduation month (May or December)");
+    if (enteredGradYear == currentYear && enteredGradMonth == "December"){
+      classYear = "Senior"
+      welcomeCollegeStudent(classYear)
+    } else if (enteredGradYear - currentYear == 1 && enteredGradMonth == "May") {
+        classYear = "Senior"
+        welcomeCollegeStudent(classYear)
+    } else if (enteredGradYear - currentYear == 1 && enteredGradMonth == "December") {
+          classYear = "Junior"
+          welcomeCollegeStudent(classYear)
+    } else if (enteredGradYear - currentYear == 2 && enteredGradMonth == "May") {
+          classYear = "Junior"
+          welcomeCollegeStudent(classYear)
+    }
+}
+
+welcomeStudentsByGraduatingClass();
