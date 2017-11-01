@@ -1,3 +1,5 @@
+//**************teacher object***********//
+
 var teacher = {
 name: "Jennifer Honey", department: "English",
 ratings: [3.0,4.5,5.0],
@@ -24,3 +26,13 @@ if (userRating >=0 && userRating <=5) {
 } else {
   userRating = prompt("We would like for you to review . Please enter a rating between 0.0 - 5.0?");
   }
+
+
+//***********course object**********//
+
+var course = {
+  name: "Literature",
+  department: "English",
+  teacher: "Jennifer Honey",
+  semester: "Spring",
+}
