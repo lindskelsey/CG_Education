@@ -102,7 +102,37 @@ function welcomeStudentsByGraduatingClass() {
     } else if (enteredGradYear - currentYear == 2 && enteredGradMonth == "May") {
           classYear = "Junior"
           welcomeCollegeStudent(classYear)
-    }
+    } else if ( else if (enteredGradYear - currentYear == 2 && enteredGradMonth == "December") {
+          classYear = "Sophomore"
+          welcomeCollegeStudent(classYear)
+    } else if (enteredGradYear - currentYear == 3 && enteredGradMonth == "May") {
+          classYear = "Sophomore"
+          welcomeCollegeStudent(classYear)
+    } else if (enteredGradYear - currentYear == 3 && enteredGradMonth == "December") {
+          classYear = "Freshman"
+          welcomeCollegeStudent(classYear)
+    } else if (enteredGradYear - currentYear == 4 && enteredGradMonth == "May") {
+          classYear = "Freshman"
+          welcomeCollegeStudent(classYear)
 }
 
 welcomeStudentsByGraduatingClass();
+
+//**Objects**//
+
+var teacher {
+name: "Jennifer Honey", department: "English",
+ratings: [3.0,4.5,5.0]
+addRating: function (newRating) {
+  var totalRating = ratings;
+  this.ratings.push(newRating);
+    },
+getAvgRating: function () {
+  var total = 0;
+  for(i=0; i < this.ratings.length; i++) {
+      total = total + this.ratings[i];
+    }
+  return total / this.ratings.length;
+  }
+
+};
