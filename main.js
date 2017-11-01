@@ -33,6 +33,35 @@ if (userRating >=0 && userRating <=5) {
 var course = {
   name: "Literature",
   department: "English",
-  teacher: "Jennifer Honey",
+  teacher: teacher.name,
   semester: "Spring",
 }
+
+var coursesListFull = [
+                [course.name,course.department],
+                ["Spanish", "Foreign Language"],
+                ["Geometry", "Math"],
+                ["Physics", "Science"],
+                ["Biology", "Science"],
+                ["Calculus", "Math"]
+              ];
+
+function filterByDepartment (coursesArray, selectDept) {
+  var courseList = [];
+  for (var i = 0; i < coursesArray.length; i++) {
+    if (coursesArray[i][1] == selectDept){
+      courseList.push(coursesArray[i][0]);
+    }
+  }
+    return courseList;
+}
+
+var fullDeptList = ["Math", "Science", "English", "Foreign Language"];
+
+var userDept = prompt("Please enter the department you are looking for a course in")
+
+  if (fullDeptList.indexOf(userDept) !== -1) {
+    alert("The following courses are available in the " + userDept + " department:" + filterByDepartment(coursesListFull,userDept) + ".");
+  } else {
+    prompt("Please enter the department you are looking for a course in")
+  };
