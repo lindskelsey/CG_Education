@@ -23,6 +23,7 @@ Teacher.prototype = {
 var teacherKeating = new Teacher("John Keating", "English", [3.5,4.0,4.0]);
 var teacherTaylor = new Teacher("Eric Taylor", "Physical Ed.", [2.5,3.0,4.0]);
 var teacherHoney = new Teacher("Jennifer Honey", "English", [3.5,4.0,5.0]);
+var teacherTest = new Teacher("Test", "English", [3.5,4.0,5.0]);
 
 
 var userRating = prompt("We would like for you to review " + teacherHoney.name + "." + " Please enter a rating between 0.0 - 5.0?");
@@ -46,14 +47,17 @@ function Course(courseName, courseDept, courseTeacher, courseSemester) {
 }
 
 var courseLiterature = new Course("Literature", "English", teacherHoney.name, "Spring");
+var courseCalculus = new Course("Calculus", "Math", teacherTest.name, "Fall");
+var courseSpanish = new Course("Spanish", "Foreign Language", teacherTest.name, "Fall");
+var courseBiology = new Course("Biology", "Science", teacherTest.name, "Fall");
+var courseChemistry = new Course("Chemistry", "Science", teacherTest.name, "Fall");
 
 var coursesListFull = [
-                [courseLiterature.name,courseLiterature.department],
-                ["Spanish", "Foreign Language"],
-                ["Geometry", "Math"],
-                ["Physics", "Science"],
-                ["Biology", "Science"],
-                ["Calculus", "Math"]
+                [courseLiterature.name, courseLiterature.department],
+                [courseCalculus.name, courseCalculus.department],
+                [courseSpanish.name, courseSpanish.department],
+                [courseBiology.name, courseBiology.department],
+                [courseChemistry.name, courseChemistry.department],
               ];
 
 function filterByDepartment (coursesArray, selectDept) {
@@ -119,49 +123,93 @@ var welcomeCollegeStudent = function (classYear) {
   alert("Welcome " + classYear + "!")
 };
 
-var welcomeHSStudent = function (classYearHS) {
+var welcomeHsStudent = function (classYearHS) {
   alert("You're still a " + classYearHS + " in high school!")
 };
 
-var getGradDate = function (gradMonth, gradYear) {
-  var gradDate = gradMonth + " " + gradYear;
-  return gradDate
-
-};
 
 //************//
 
 var today = new Date();
 var currentYear = today.getFullYear();
+var currentMonth = today.getMonth();
 
 function welcomeStudentsByGraduatingClass() {
-    var enteredGradYear = prompt("Enter your graduation year");
-    var enteredGradMonth = prompt("Enter your graduation month (May or December)");
-    if (enteredGradYear == currentYear && enteredGradMonth == "December"){
-      classYear = "Senior"
-      welcomeCollegeStudent(classYear)
-    } else if (enteredGradYear - currentYear == 1 && enteredGradMonth == "May") {
+  var enteredGradYear = prompt("Enter your graduation year");
+  var enteredGradMonth = prompt("Enter your graduation month (May or December)");
+  var yearDiff = enteredGradYear - currentYear;
+
+if(yearDiff <= 4 && yearDiff >= 0) {
+  if (currentMonth <= 4) {
+      if (yearDiff == 0 && (enteredGradMonth == "May" || enteredGradMonth == "December")) {
         classYear = "Senior"
+      } else if (yearDiff == 1 && (enteredGradMonth == "May" || enteredGradMonth == "December")){
+        classYear = "Junior"
+      } else if (yearDiff == 2 && (enteredGradMonth == "May" || enteredGradMonth == "December")){
+        classYear = "Sophomore"
+      } else if (yearDiff == 3 && (enteredGradMonth == "May" || enteredGradMonth == "December")){
+        classYear = "Freshman"
+      }
         welcomeCollegeStudent(classYear)
-    } else if (enteredGradYear - currentYear == 1 && enteredGradMonth == "December") {
+  } else if (currentMonth > 4 && currentMonth <= 11) {
+          if (yearDiff == 0 && enteredGradMonth == "December") {
+          classYear = "Senior"
+        } else if (yearDiff == 1 && enteredGradMonth == "May"){
+          classYear = "Senior"
+        } else if (yearDiff == 1 && enteredGradMonth == "December"){
           classYear = "Junior"
-          welcomeCollegeStudent(classYear)
-    } else if (enteredGradYear - currentYear == 2 && enteredGradMonth == "May") {
+        } else if (yearDiff == 2 && enteredGradMonth == "May"){
           classYear = "Junior"
-          welcomeCollegeStudent(classYear)
-    } else if (enteredGradYear - currentYear == 2 && enteredGradMonth == "December") {
+        } else if (yearDiff == 2 && enteredGradMonth == "December"){
           classYear = "Sophomore"
-          welcomeCollegeStudent(classYear)
-    } else if (enteredGradYear - currentYear == 3 && enteredGradMonth == "May") {
+        } else if (yearDiff == 3 && enteredGradMonth == "May"){
           classYear = "Sophomore"
-          welcomeCollegeStudent(classYear)
-    } else if (enteredGradYear - currentYear == 3 && enteredGradMonth == "December") {
+        } else if (yearDiff == 3 && enteredGradMonth == "December"){
           classYear = "Freshman"
-          welcomeCollegeStudent(classYear)
-    } else if (enteredGradYear - currentYear == 4 && enteredGradMonth == "May") {
+        } else if (yearDiff == 4 && enteredGradMonth == "May"){
           classYear = "Freshman"
+        }
           welcomeCollegeStudent(classYear)
-};
+      }
+
+} else if (yearDiff >= 4 && yearDiff <= 9) {
+    if (currentMonth <= 4) {
+          if (yearDiff == 5 && (enteredGradMonth == "May" || enteredGradMonth == "December")) {
+            classYear = "Senior"
+          } else if (yearDiff == 6 && (enteredGradMonth == "May" || enteredGradMonth == "December")){
+            classYear = "Junior"
+          } else if (yearDiff == 7 && (enteredGradMonth == "May" || enteredGradMonth == "December")){
+            classYear = "Sophomore"
+          } else if (yearDiff == 8 && (enteredGradMonth == "May" || enteredGradMonth == "December")){
+            classYear = "Freshman"
+          }
+          welcomeHsStudent(classYear)
+    } else if (currentMonth > 4 && currentMonth <= 11) {
+        if (yearDiff == 5 && enteredGradMonth == "December") {
+          classYear = "Senior"
+        } else if (yearDiff == 6 && enteredGradMonth == "May"){
+          classYear = "Senior"
+        } else if (yearDiff == 6 && enteredGradMonth == "December"){
+          classYear = "Junior"
+        } else if (yearDiff == 7 && enteredGradMonth == "May"){
+          classYear = "Junior"
+        } else if (yearDiff == 7 && enteredGradMonth == "December"){
+          classYear = "Sophomore"
+        } else if (yearDiff == 8 && enteredGradMonth == "May"){
+          classYear = "Sophomore"
+        } else if (yearDiff == 8 && enteredGradMonth == "December"){
+          classYear = "Freshman"
+        } else if (yearDiff == 9 && enteredGradMonth == "May"){
+          classYear = "Freshman"
+        }
+          welcomeHsStudent(classYear)
+      }
+    }
+    else if (yearDiff > 9
+            || (currentMonth <= 4 && yearDiff > 8)
+            || (currentMonth > 4 && yearDiff == 9 && enteredGradMonth == "December")) {
+      alert("Whoa, you have a few more years until college...")
+  }
 }
 
 welcomeStudentsByGraduatingClass();
