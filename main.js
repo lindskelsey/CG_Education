@@ -83,3 +83,30 @@ var userDept = prompt("Please enter the department you are looking for a course 
       }
       return deptList;
   };
+
+
+  //*******Student object********//
+
+function Student(studentName, studentMajor, studentEmail, studentAvgGpa, studentCourses) {
+  this.name = studentName;
+  this.major = studentMajor;
+  this.email = studentEmail;
+  this.gpa = studentAvgGpa;
+  this.courses = studentCourses;
+}
+
+Student.prototype = {
+  addCourse: function (newCourse) {
+    this.courses.push(newCourse)
+  },
+  dropCourse: function(removeCourse) {
+    for(var i = this.courses.length-1; i--;){
+	     if (this.courses[i] === removeCourse) this.courses.splice(i, 1);
+    }
+  },
+  changeMajor: function(newMajor) {
+    this.major = newMajor;
+  }
+};
+
+var studentTest = new Student("Test Name", "Biology", "test@test.com", 3.5, ["Literature", "Physics", "Spanish"]);
