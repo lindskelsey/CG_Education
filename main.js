@@ -37,7 +37,7 @@ if (userRating >=0 && userRating <=5) {
   }
 
 
-//***********course object**********//
+//***********Course Prototype**********//
 
 function Course(courseName, courseDept, courseTeacher, courseSemester) {
   this.name = courseName;
@@ -46,47 +46,44 @@ function Course(courseName, courseDept, courseTeacher, courseSemester) {
   this.semester = courseSemester;
 }
 
-var courseLiterature = new Course("Literature", "English", teacherHoney.name, "Spring");
-var courseCalculus = new Course("Calculus", "Math", teacherTest.name, "Fall");
-var courseSpanish = new Course("Spanish", "Foreign Language", teacherTest.name, "Fall");
-var courseBiology = new Course("Biology", "Science", teacherTest.name, "Fall");
-var courseChemistry = new Course("Chemistry", "Science", teacherTest.name, "Fall");
+//******************Course Array***********//
 
-var coursesListFull = [
-                [courseLiterature.name, courseLiterature.department],
-                [courseCalculus.name, courseCalculus.department],
-                [courseSpanish.name, courseSpanish.department],
-                [courseBiology.name, courseBiology.department],
-                [courseChemistry.name, courseChemistry.department],
-              ];
+var courseArray = [];
+courseArray[0] = new Course("Literature", "English", teacherHoney.name, "Spring");
+courseArray[1] = new Course("Calculus", "Math", teacherTest.name, "Fall");
+courseArray[2] = new Course("Spanish", "Foreign Language", teacherTest.name, "Fall");
+courseArray[3] = new Course("Biology", "Science", teacherTest.name, "Fall");
+courseArray[4] = new Course("Chemistry", "Science", teacherTest.name, "Fall");
+courseArray[5] = new Course("Test", "Science", teacherTest.name, "Fall");
 
-function filterByDepartment (coursesArray, selectDept) {
-  var courseList = [];
-  for (var i = 0; i < coursesArray.length; i++) {
-    if (coursesArray[i][1] == selectDept){
-      courseList.push(coursesArray[i][0]);
+//******************Just Depts**********//
+
+var deptValues = [];
+ for (i = 0; i < courseArray.length; i++){
+    deptValues[i] = courseArray[i]["department"];
+ }
+
+//******************User Prompt***********//
+
+var userDept = prompt("Please enter the department you are looking for a course in");
+
+//*****************************************//
+
+function filterByDepartment(userDept, courseArray){
+    var courseList = [];
+    for (var i=0; i < courseArray.length; i++) {
+        if (userDept == courseArray[i].department) {
+        courseList.push(courseArray[i].name);
+      }
     }
-  }
     return courseList;
 }
 
-var fullDeptList = ["Math", "Science", "English", "Foreign Language"];
-
-var userDept = prompt("Please enter the department you are looking for a course in")
-
-  if (fullDeptList.indexOf(userDept) !== -1) {
-    alert("The following courses are available in the " + userDept + " department:" + filterByDepartment(coursesListFull,userDept) + ".");
-  } else {
-    prompt("Please enter the department you are looking for a course in")
-  };
-
-  var getDeptList = function (coursesArray, indexDept){
-      var deptList = [];
-      for(var i=0; i<coursesArray.length; i++){
-        deptList.push(coursesArray[i][indexDept]);
-      }
-      return deptList;
-  };
+if (deptValues.indexOf(userDept) !== -1) {
+  alert("The following courses are available in the " + userDept + " department:" + filterByDepartment(userDept,courseArray) + ".");
+} else {
+  prompt("Please enter the department you are looking for a course in")
+};
 
 
   //*******Student object********//
@@ -210,6 +207,9 @@ if(yearDiff <= 4 && yearDiff >= 0) {
             || (currentMonth > 4 && yearDiff == 9 && enteredGradMonth == "December")) {
       alert("Whoa, you have a few more years until college...")
   }
+    else {
+      alert("You've already graduated! Congrats!")
+    }
 }
 
 welcomeStudentsByGraduatingClass();

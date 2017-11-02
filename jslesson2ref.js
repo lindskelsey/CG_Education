@@ -64,3 +64,58 @@ var userDept = prompt("Please enter the department you are looking for a course 
       }
       return deptList;
   };
+
+  //********NOTES**********//
+
+  function Course(courseName, courseDept, courseTeacher, courseSemester) {
+    this.name = courseName;
+    this.department = courseDept;
+    this.teacher = courseTeacher;
+    this.semester = courseSemester;
+  }
+
+  var objArray = [];
+  objArray[0] = new Course("Literature", "English", teacherHoney.name, "Spring");
+  objArray[1] = new Course("Calculus", "Math", teacherTest.name, "Fall");
+  objArray[2] = new Course("Spanish", "Foreign Language", teacherTest.name, "Fall");
+  objArray[3] = new Course("Biology", "Science", teacherTest.name, "Fall");
+  objArray[4] = new Course("Chemistry", "Science", teacherTest.name, "Fall");
+  objArray[5] = new Course("Test", "Science", teacherTest.name, "Fall");
+
+
+  var coursesListFull = [
+                  [courseLiterature.name, courseLiterature.department],
+                  [courseCalculus.name, courseCalculus.department],
+                  [courseSpanish.name, courseSpanish.department],
+                  [courseBiology.name, courseBiology.department],
+                  [courseChemistry.name, courseChemistry.department],
+
+                ];
+
+  function filterByDepartment (coursesArray, selectDept) {
+    var courseList = [];
+    for (var i = 0; i < coursesArray.length; i++) {
+      if (coursesArray[i][1] == selectDept){
+        courseList.push(coursesArray[i][0]);
+      }
+    }
+      return courseList;
+  }
+
+  var fullDeptList = ["Math", "Science", "English", "Foreign Language"];
+
+  var userDept = prompt("Please enter the department you are looking for a course in")
+
+    if (fullDeptList.indexOf(userDept) !== -1) {
+      alert("The following courses are available in the " + userDept + " department:" + filterByDepartment(coursesListFull,userDept) + ".");
+    } else {
+      prompt("Please enter the department you are looking for a course in")
+    };
+
+    var getDeptList = function (coursesArray, indexDept){
+        var deptList = [];
+        for(var i=0; i<coursesArray.length; i++){
+          deptList.push(coursesArray[i][indexDept]);
+        }
+        return deptList;
+    };
