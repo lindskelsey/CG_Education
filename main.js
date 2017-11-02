@@ -1,9 +1,9 @@
 //**************teacher object***********//
 
-function Teacher(teacherName, teacherDept, ratingsArray) {
-  this.name = undef;
-  this.department = "English";
-  this.ratings = [3.0,4.5,5.0];
+function Teacher(teacherName, teacherDepartment, teacherRatings) {
+  this.name = teacherName;
+  this.department = teacherDepartment;
+  this.ratings = teacherRatings;
 }
 
 Teacher.prototype = {
@@ -21,7 +21,9 @@ Teacher.prototype = {
 };
 
 var teacherKeating = new Teacher("John Keating", "English", [3.5,4.0,4.0]);
-var teacherTaylor = new Teacher("Eric Taylor", "Physical Ed.", [2.5,3.0,4.0])
+var teacherTaylor = new Teacher("Eric Taylor", "Physical Ed.", [2.5,3.0,4.0]);
+var teacherHoney = new Teacher("Jennifer Honey", "English", [3.5,4.0,5.0]);
+
 
 var userRating = prompt("We would like for you to review " + teacherKeating.name + "." + " Please enter a rating between 0.0 - 5.0?");
 
