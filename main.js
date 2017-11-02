@@ -1,23 +1,29 @@
 //**************teacher object***********//
 
-var teacher = {
-name: "Jennifer Honey", department: "English",
-ratings: [3.0,4.5,5.0],
-addRating: function (newRating) {
-  var totalRating = ratings;
-  this.ratings.push(newRating);
-    },
-getAvgRating: function () {
-  var total = 0;
-  for(i=0; i < this.ratings.length; i++) {
-      total = total + this.ratings[i];
-    }
-  return total / this.ratings.length;
-  }
+function Teacher(teacherName, teacherDept, ratingsArray) {
+  this.name = undef;
+  this.department = "English";
+  this.ratings = [3.0,4.5,5.0];
+}
 
+Teacher.prototype = {
+  addRating: function (newRating) {
+    var totalRating = ratings;
+    this.ratings.push(newRating);
+      },
+  getAvgRating: function () {
+    var total = 0;
+    for(i=0; i < this.ratings.length; i++) {
+        total = total + this.ratings[i];
+      }
+    return total / this.ratings.length;
+    }
 };
 
-var userRating = prompt("We would like for you to review " + teacher.name + "." + " Please enter a rating between 0.0 - 5.0?");
+var teacherKeating = new Teacher("John Keating", "English", [3.5,4.0,4.0]);
+var teacherTaylor = new Teacher("Eric Taylor", "Physical Ed.", [2.5,3.0,4.0])
+
+var userRating = prompt("We would like for you to review " + teacherKeating.name + "." + " Please enter a rating between 0.0 - 5.0?");
 
 
 if (userRating >=0 && userRating <=5) {
@@ -64,4 +70,12 @@ var userDept = prompt("Please enter the department you are looking for a course 
     alert("The following courses are available in the " + userDept + " department:" + filterByDepartment(coursesListFull,userDept) + ".");
   } else {
     prompt("Please enter the department you are looking for a course in")
+  };
+
+  var getDeptList = function (coursesArray, indexDept){
+      var deptList = [];
+      for(var i=0; i<coursesArray.length; i++){
+        deptList.push(coursesArray[i][indexDept]);
+      }
+      return deptList;
   };
