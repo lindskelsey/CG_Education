@@ -25,12 +25,12 @@ var teacherTaylor = new Teacher("Eric Taylor", "Physical Ed.", [2.5,3.0,4.0]);
 var teacherHoney = new Teacher("Jennifer Honey", "English", [3.5,4.0,5.0]);
 
 
-var userRating = prompt("We would like for you to review " + teacherKeating.name + "." + " Please enter a rating between 0.0 - 5.0?");
+var userRating = prompt("We would like for you to review " + teacherHoney.name + "." + " Please enter a rating between 0.0 - 5.0?");
 
 
 if (userRating >=0 && userRating <=5) {
-  teacher.ratings.push(parseInt(userRating))
-    alert("Thanks for you review! " + teacher.name + "'s average rating is now " + teacher.getAvgRating(teacher.ratings) + " .")
+  teacherHoney.ratings.push(parseInt(userRating))
+    alert("Thanks for you review! " + teacherHoney.name + "'s average rating is now " + teacherHoney.getAvgRating(teacherHoney.ratings) + " .")
 } else {
   userRating = prompt("We would like for you to review . Please enter a rating between 0.0 - 5.0?");
   }
@@ -38,15 +38,17 @@ if (userRating >=0 && userRating <=5) {
 
 //***********course object**********//
 
-var course = {
-  name: "Literature",
-  department: "English",
-  teacher: teacher.name,
-  semester: "Spring",
+function Course(courseName, courseDept, courseTeacher, courseSemester) {
+  this.name = courseName;
+  this.department = courseDept;
+  this.teacher = courseTeacher;
+  this.semester = courseSemester;
 }
 
+var courseLiterature = new Course("Literature", "English", teacherHoney.name, "Spring");
+
 var coursesListFull = [
-                [course.name,course.department],
+                [courseLiterature.name,courseLiterature.department],
                 ["Spanish", "Foreign Language"],
                 ["Geometry", "Math"],
                 ["Physics", "Science"],
