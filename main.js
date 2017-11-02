@@ -110,3 +110,58 @@ Student.prototype = {
 };
 
 var studentTest = new Student("Test Name", "Biology", "test@test.com", 3.5, ["Literature", "Physics", "Spanish"]);
+
+//*** Grad year prompt***//
+
+//**JS 3**//
+
+var welcomeCollegeStudent = function (classYear) {
+  alert("Welcome " + classYear + "!")
+};
+
+var welcomeHSStudent = function (classYearHS) {
+  alert("You're still a " + classYearHS + " in high school!")
+};
+
+var getGradDate = function (gradMonth, gradYear) {
+  var gradDate = gradMonth + " " + gradYear;
+  return gradDate
+
+};
+
+//************//
+
+var today = new Date();
+var currentYear = today.getFullYear();
+
+function welcomeStudentsByGraduatingClass() {
+    var enteredGradYear = prompt("Enter your graduation year");
+    var enteredGradMonth = prompt("Enter your graduation month (May or December)");
+    if (enteredGradYear == currentYear && enteredGradMonth == "December"){
+      classYear = "Senior"
+      welcomeCollegeStudent(classYear)
+    } else if (enteredGradYear - currentYear == 1 && enteredGradMonth == "May") {
+        classYear = "Senior"
+        welcomeCollegeStudent(classYear)
+    } else if (enteredGradYear - currentYear == 1 && enteredGradMonth == "December") {
+          classYear = "Junior"
+          welcomeCollegeStudent(classYear)
+    } else if (enteredGradYear - currentYear == 2 && enteredGradMonth == "May") {
+          classYear = "Junior"
+          welcomeCollegeStudent(classYear)
+    } else if (enteredGradYear - currentYear == 2 && enteredGradMonth == "December") {
+          classYear = "Sophomore"
+          welcomeCollegeStudent(classYear)
+    } else if (enteredGradYear - currentYear == 3 && enteredGradMonth == "May") {
+          classYear = "Sophomore"
+          welcomeCollegeStudent(classYear)
+    } else if (enteredGradYear - currentYear == 3 && enteredGradMonth == "December") {
+          classYear = "Freshman"
+          welcomeCollegeStudent(classYear)
+    } else if (enteredGradYear - currentYear == 4 && enteredGradMonth == "May") {
+          classYear = "Freshman"
+          welcomeCollegeStudent(classYear)
+};
+}
+
+welcomeStudentsByGraduatingClass();
